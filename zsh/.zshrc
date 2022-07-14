@@ -24,7 +24,7 @@ export GREP_COLOR='01:31'
 #
 
 # asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
 
 # sheldon
 eval "$(sheldon source)"

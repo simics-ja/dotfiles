@@ -12,7 +12,7 @@ ln -sf $HOME/dotfiles/zsh/.profile $HOME/.profile
 ln -sf $HOME/dotfiles/sheldon/plugins.toml $HOME/.sheldon/plugins.toml
 
 # git
-ln -sf $HOME/dotfiles/git $HOME/.config/git
+ln -sf $HOME/dotfiles/git $HOME/.config/
 
 # asdf
 ln -sf $HOME/dotfiles/asdf/.tool-versions $HOME/.tool-versions
