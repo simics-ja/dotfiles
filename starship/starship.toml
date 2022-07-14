@@ -1,0 +1,49 @@
+# Use custom format
+format = """
+$username[@](bold black)$hostname$directory$git_branch$git_commit$git_state$git_metrics $git_status $time
+[](bold cyan)[ ](bold purple)"""
+
+scan_timeout=50
+command_timeout=1500
+
+[username]
+disabled = false
+format = "[שּ $user]($style)"
+show_always = true
+style_root = "white bold"
+style_user = "white bold"
+
+[hostname]
+disabled = false
+format = "[$hostname]($style) in "
+ssh_only = false
+style = "white"
+trim_at = "."
+
+[directory]
+style = "cyan"
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+
+[git_state]
+style = "yellow"
+
+[git_status]
+ahead = ""
+behind = ""
+conflicted = "×"
+deleted = "﫧"
+diverged = "ﮙ "
+format = "[$stashed](cyan)[$conflicted$deleted](red)[$renamed$modified](yellow)[$staged](blue)[$untracked](purple)"
+modified = " "
+renamed = " "
+staged = " "
+stashed = ""
+untracked = "●"
+up_to_date = " "
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+style = "bold yellow"

@@ -1,0 +1,2 @@
+nnoremap <silent> \\ :RN<CR>
+

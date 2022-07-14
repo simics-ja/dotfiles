@@ -1,0 +1,12 @@
+golang 1.17.7
+nodejs lts-gallium
+terraform 0.14.6
+python 3.9.7
+poetry 1.1.9
+R 4.1.1
+yarn 1.22.17
+direnv 2.30.3
+protoc 3.19.4
+protoc-gen-go 1.5.2
+php 8.0.18
+rust 1.62.0

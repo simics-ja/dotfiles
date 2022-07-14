@@ -1,0 +1,28 @@
+[core]
+  editor = vim
+  autocrlf = false
+  longpaths = true
+[user]
+  email = smz2develop@gmail.com
+  name = Tomoyuki Shimizu
+[IncludeIf "gitdir:~/work/cybozu/"]
+  path = ~/.config/git/cybozu
+
+[alias]
+  pull-f = !git fetch && git branch --contains | cut -d' ' -f2 | xargs -n1 -I@ git reset --hard origin/@
+  branch-name = !git name-rev --name-only HEAD | tr -d '\n'
+  ffl = !"f() { git log -n10000 --color=always --format='%C(yellow)%h %C(cyan)[%an] %C(auto)%s%d %C(black)%C(bold)<%cr>' \"$@\" | fzf -m --ansi --no-sort --tiebreak=index --preview 'git show --color=always $(cut -d\" \" -f1 <<< {})' | cut -d\" \" -f 1 | tr -d '\n'; }; f"
+  ffb = !git branch -a | fzf | xargs git switch
+  ffbn = !git branch -a | fzf | tr -d '* ' | tr -d '\n'
+  ffa = !git ls-files -m -o --exclude-standard | fzf -m --preview 'git diff --color=always {}' | xargs git add && git status -s
+  ffu = !git diff --name-only --cached | fzf -m --preview 'git diff --color=always --cached {}' | xargs git restore --staged && git status -s
+  ffr = !git ls-files -m -o --exclude-standard | fzf -m --preview 'git diff --color=always {}' | xargs git restore && git status -s
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge --skip -- %f
+  process = git-lfs filter-process --skip
+  required = true
+[init]
+  defaultBranch = main
+[color]
+  ui = auto
