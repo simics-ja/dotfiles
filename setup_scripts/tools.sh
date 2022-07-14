@@ -2,11 +2,14 @@
 
 # mkdir
 mkdir -p $HOME/.config
+mkdir -p $HOME/.sheldon
 
 # zsh
 ln -sf $HOME/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -sf $HOME/dotfiles/zsh/.zprofile $HOME/.zprofile
 ln -sf $HOME/dotfiles/zsh/.profile $HOME/.profile
+# sheldon
+ln -sf $HOME/dotfiles/sheldon/plugins.toml $HOME/.sheldon/plugins.toml
 
 # git
 ln -sf $HOME/dotfiles/git $HOME/.config/git
