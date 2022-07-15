@@ -9,3 +9,5 @@ augroup END
 
 " Show hidden file
 let g:fern#default_hidden=1
+" Exclude file
+let g:fern#default_exclude='^\%(\.git\|\..\+\.swp\)$'
