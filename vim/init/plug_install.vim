@@ -23,7 +23,7 @@ Plug 'lervag/vimtex'
 " Status Line
 Plug 'itchyny/lightline.vim'
 
-" - Fuzzy finder
+" Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -53,8 +53,11 @@ Plug 'tpope/vim-commentary'
 " Spell checker
 Plug 'kamykn/spelunker.vim'
 
-" line number
+" Line number
 Plug 'vim-scripts/RltvNmbr.vim'
+
+" Cheat sheet
+Plug 'reireias/vim-cheatsheet'
 
 " Initialize plugin system
 call plug#end()
