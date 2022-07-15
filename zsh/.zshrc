@@ -2,8 +2,8 @@
 if [[ $OSTYPE==darwin* ]]; then
   [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 fi
-#
 
+#
 # Environment variables
 #
 
@@ -32,10 +32,16 @@ eval "$(sheldon source)"
 # starship
 eval "$(starship init zsh)"
 
-
 #
 # Customization
 #
+
+# Unpushed dotfiles reminder
+if test -n "$(git -C $HOME/dotfiles status --porcelain)" ||
+  ! git -C $HOME/dotfiles diff --exit-code --stat --cached origin/main > /dev/null ; then
+  echo -e "\e[33mNotice: Unpushed dotfiles are detected. Please commit and push the dotfiles."
+fi
+
 
 # zsh history optimizer
 setopt HIST_IGNORE_DUPS
@@ -55,7 +61,7 @@ alias la='exa -la'
 alias l='exa -lG'
 alias ll='exa -laG'
 
-# zoxide & auto exa
+# zoxide & auto exa alias
 j(){z $@ && exa --icons}
 ji(){zi && exa --icons}
 
