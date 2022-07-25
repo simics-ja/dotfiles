@@ -11,6 +11,8 @@ if [ -z "$(command -v brew)" ]; then
     test -e /usr/local/bin/brew && eval "$(/usr/local/bin/brew shellenv)"
     test -e /opt/homebrew/bin/brew && eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
-  brew bundle
-  echo "--- done ---"
 fi
+
+echo "--- install tools with homebrew ---"
+brew bundle
+

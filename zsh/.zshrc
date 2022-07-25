@@ -56,14 +56,18 @@ bindkey '^p' anyframe-widget-put-history
 bindkey '^r' anyframe-widget-execute-history
 
 # exa
-alias ls='exa'
-alias la='exa -la'
-alias l='exa -lG'
-alias ll='exa -laG'
+if type exa > /dev/null 2>&1; then 
+  alias ls='exa'
+  alias la='exa -la'
+  alias l='exa -lG'
+  alias ll='exa -laG'
+fi
 
 # zoxide & auto exa alias
-j(){z $@ && exa --icons}
-ji(){zi && exa --icons}
+if type z > /dev/null 2>&1 && type exa > /dev/null 2>&1; then 
+  j(){z $@ && exa --icons}
+  ji(){zi && exa --icons}
+fi
 
 # Fig post block. Keep at the bottom of this file.
 if [[ $OSTYPE==darwin* ]]; then
