@@ -66,7 +66,7 @@ fi
 # zoxide & auto exa alias
 if type z > /dev/null 2>&1 && type exa > /dev/null 2>&1; then 
   j(){z $@ && exa --icons}
-  ji(){zi && exa --icons}
+  ji(){zi $@ && exa --icons}
 fi
 
 # Fig post block. Keep at the bottom of this file.
