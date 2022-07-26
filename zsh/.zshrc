@@ -4,7 +4,7 @@ if [[ $OSTYPE==darwin* ]]; then
 fi
 
 #
-# Environment variables
+# PATH variables
 #
 
 # PATH
@@ -12,12 +12,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # GOPATH
 export GOPATH=$HOME/.go
-
-# fzf
-export FZF_DEFAULT_OPTS='--height 60% --reverse --border'
-
-# grep
-export GREP_COLOR='01:31'
 
 #
 # Initialization
@@ -32,6 +26,10 @@ eval "$(sheldon source)"
 # starship
 eval "$(starship init zsh)"
 
+# local settings for individual machine
+# need to make .zshrc.local (ignored by git)
+test -e $HOME/dotfiles/zsh/.zshrc.local && source $HOME/dotfiles/zsh/.zshrc.local
+
 #
 # Customization
 #
@@ -41,7 +39,6 @@ if test -n "$(git -C $HOME/dotfiles status --porcelain)" ||
   ! git -C $HOME/dotfiles diff --exit-code --stat --cached origin/main > /dev/null ; then
   echo -e "\e[33mNotice: Unpushed dotfiles are detected. Please commit and push the dotfiles."
 fi
-
 
 # zsh history optimizer
 setopt HIST_IGNORE_DUPS
@@ -54,6 +51,12 @@ setopt HIST_NO_STORE
 # anyframe keybind
 bindkey '^p' anyframe-widget-put-history
 bindkey '^r' anyframe-widget-execute-history
+
+# fzf
+export FZF_DEFAULT_OPTS='--height 60% --reverse --border'
+
+# grep
+export GREP_COLOR='01:31'
 
 # exa
 if type exa > /dev/null 2>&1; then 
