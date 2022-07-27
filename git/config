@@ -2,9 +2,11 @@
   editor = vim
   autocrlf = false
   longpaths = true
+
 [user]
   email = smz2develop@gmail.com
   name = Tomoyuki Shimizu
+
 [IncludeIf "gitdir:~/work/cybozu/"]
   path = ~/.config/git/cybozu
 
@@ -17,12 +19,21 @@
   ffa = !git ls-files -m -o --exclude-standard | fzf -m --preview 'git diff --color=always {}' | xargs git add && git status -s
   ffu = !git diff --name-only --cached | fzf -m --preview 'git diff --color=always --cached {}' | xargs git restore --staged && git status -s
   ffr = !git ls-files -m -o --exclude-standard | fzf -m --preview 'git diff --color=always {}' | xargs git restore && git status -s
+  dd = !"f() { git diff \"$@\" | delta; }; f"
+  ds = !"f() { git show \"$@\" | delta; }; f"
+
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge --skip -- %f
   process = git-lfs filter-process --skip
   required = true
+
 [init]
   defaultBranch = main
+
 [color]
   ui = auto
+
+[delta]
+    side-by-side = true
+    line-numbers = true
