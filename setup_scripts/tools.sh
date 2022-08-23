@@ -26,5 +26,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sf $HOME/dotfiles/vim/init.vim $HOME/.vimrc
 
-# lepton
-ln -sf $HOME/dotfiles/lepton/leptonr $HOME/.leptonrc 
+if [ $OSTYPE==darwin* ]; then
+   # lepton
+   ln -sf $HOME/dotfiles/lepton/leptonr $HOME/.leptonrc
+
+   # hammerspoon
+   ln -sf $HOME/dotfiles/hammerspoon $HOME/.hammerspoon
+fi
