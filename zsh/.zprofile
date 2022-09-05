@@ -1,7 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-if [[ $OSTYPE==darwin* ]]; then
-  [[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && . "$HOME/.fig/shell/zprofile.pre.zsh"
-fi
+[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && . "$HOME/.fig/shell/zprofile.pre.zsh"
 
 if [[ $OSTYPE==linux* ]]; then
   test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
@@ -14,7 +12,4 @@ if [[ $OSTYPE==darwin* ]]; then
 fi
 
 # Fig post block. Keep at the bottom of this file.
-if [[ $OSTYPE==darwin* ]]; then
-  [[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && . "$HOME/.fig/shell/zprofile.post.zsh"
-fi
-
+[[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && . "$HOME/.fig/shell/zprofile.post.zsh"
