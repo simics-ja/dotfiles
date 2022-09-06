@@ -3,12 +3,19 @@ toggleApp = function(appName)
     local focusedScreen = hs.mouse.getCurrentScreen()
     local focusedSpace = hs.spaces.activeSpaceOnScreen(focusedScreen)
     local filter = hs.window.filter.new(false):setAppFilter(appName)
-    local windows = filter:getWindows()
+    local app = hs.application.find(appName)
+    local windows = filter:getWindows(hs.window.filter.sortByCreated)
     local window = windows[1]
-    print(hs.inspect.inspect(windows))
 
-    if (hs.window.focusedWindow() == window) then
-        window:sendToBack()
+    -- print(hs.inspect.inspect(windows))
+
+    if (app:isHidden()) then
+        app:unhide()
+        window:focus()
+    end
+
+    if (not app:isHidden() and hs.window.focusedWindow() == window and window:screen() == focusedScreen) then
+        app:hide()
     else
         hs.spaces.moveWindowToSpace(window, focusedSpace)
         window:centerOnScreen(focusedScreen)
