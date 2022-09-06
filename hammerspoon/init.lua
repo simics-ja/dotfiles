@@ -33,3 +33,10 @@ end
 hs.hotkey.bind({"ctrl"}, "F", function()
     toggleApp("Finder")
 end)
+
+-- Copy text to clipboard with line breaks removed
+hs.hotkey.bind({"ctrl", "shift"}, "C", function()
+    local selectedText = hs.uielement.focusedElement():selectedText()
+    local lineBreakRemovedText = selectedText:gsub("[\n\r]", " ")
+    hs.pasteboard.writeObjects(hs.styledtext.new(lineBreakRemovedText))
+end)
