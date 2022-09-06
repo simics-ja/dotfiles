@@ -34,9 +34,10 @@ hs.hotkey.bind({"ctrl"}, "F", function()
     toggleApp("Finder")
 end)
 
--- Copy text to clipboard with line breaks removed
-hs.hotkey.bind({"ctrl", "shift"}, "C", function()
-    local selectedText = hs.uielement.focusedElement():selectedText()
-    local lineBreakRemovedText = selectedText:gsub("[\n\r]", " ")
+-- Paste text with line breaks removed
+hs.hotkey.bind({"cmd", "alt"}, "V", nil, function()
+    local rawText = hs.pasteboard.readString()
+    local lineBreakRemovedText = rawText:gsub("[\n\r]", " ")
     hs.pasteboard.writeObjects(hs.styledtext.new(lineBreakRemovedText))
+    hs.eventtap.keyStroke({"cmd"}, "V")
 end)
