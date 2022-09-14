@@ -35,7 +35,7 @@ hs.hotkey.bind({"ctrl"}, "F", function()
 end)
 
 -- Paste text with line breaks removed
-hs.hotkey.bind({"cmd", "alt"}, "V", nil, function()
+hs.hotkey.bind({"ctrl", "shift"}, "V", nil, function()
     local rawText = hs.pasteboard.readString()
     local lineBreakRemovedText = rawText:gsub("[\n\r]", " ")
     hs.pasteboard.writeObjects(hs.styledtext.new(lineBreakRemovedText))
