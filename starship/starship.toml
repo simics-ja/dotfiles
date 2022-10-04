@@ -3,8 +3,8 @@ format = """
 $username[@](bold black)$hostname$directory$git_branch$git_commit$git_state$git_metrics $git_status $time
 [](bold cyan)[ ](bold purple)"""
 
-scan_timeout=50
-command_timeout=1500
+scan_timeout=30
+command_timeout=500
 
 [username]
 disabled = false
