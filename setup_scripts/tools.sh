@@ -13,9 +13,6 @@ ln -sf $HOME/dotfiles/sheldon $HOME/.config/
 # git
 ln -sf $HOME/dotfiles/git $HOME/.config/
 
-# asdf
-ln -sf $HOME/dotfiles/asdf/.tool-versions $HOME/.tool-versions
-
 # starship
 ln -sf $HOME/dotfiles/starship/starship.toml $HOME/.config/starship.toml
 
