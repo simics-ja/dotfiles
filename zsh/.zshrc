@@ -71,5 +71,7 @@ if type z > /dev/null 2>&1 && type exa > /dev/null 2>&1; then
   ji(){zi $@ && exa --icons}
 fi
 
+disable r
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
