@@ -21,6 +21,7 @@
   ffr = !git ls-files -m -o --exclude-standard | fzf -m --preview 'git diff --color=always {}' | xargs git restore && git status -s
   dd = !"f() { git diff \"$@\" | delta; }; f"
   ds = !"f() { git show \"$@\" | delta; }; f"
+  qommit = !"f() { echo \"== misspelled ==\"; echo \"$@\" | aspell -l en list; echo \"================\"; read -p \"Do you proceed? (y/n): \" ANS; case "$ANS" in [yY]*) git commit -m \"$@\";; *) echo \"abort\";; esac;}; f"
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
