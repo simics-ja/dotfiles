@@ -26,7 +26,7 @@ end
 -- Toggle Google Chrome in your focused screen (double tap ctrl)
 ctrlDoublePress = require("ctrlDoublePress")
 ctrlDoublePress.action = function()
-    toggleApp("Google Chrome")
+    -- toggleApp("Google Chrome")
 end
 
 -- Toggle Finder in your focused screen (ctrl + f)
