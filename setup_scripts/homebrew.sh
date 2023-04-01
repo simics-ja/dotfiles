@@ -14,5 +14,6 @@ if [ -z "$(command -v brew)" ]; then
 fi
 
 echo "--- install tools with homebrew ---"
+sudo xcodebuild -license accept
 brew bundle
 
