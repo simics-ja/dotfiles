@@ -8,6 +8,7 @@
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.go/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 
 # GOPATH
 export GOPATH=$HOME/.go
@@ -24,6 +25,10 @@ eval "$(sheldon source)"
 
 # starship
 eval "$(starship init zsh)"
+
+# direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
 
 # local settings for individual machine
 # need to make .zshrc.local (ignored by git)
