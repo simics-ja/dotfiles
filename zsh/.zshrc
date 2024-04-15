@@ -17,8 +17,8 @@ export GOPATH=$HOME/.go
 # Initialization
 #
 
-# asdf
-. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+# mise
+eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # sheldon
 eval "$(sheldon source)"
