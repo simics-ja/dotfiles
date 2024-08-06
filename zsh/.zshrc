@@ -62,18 +62,18 @@ export FZF_DEFAULT_OPTS='--height 60% --reverse --border'
 # grep
 export GREP_COLOR='01:31'
 
-# exa
-if type exa > /dev/null 2>&1; then 
-  alias ls='exa'
-  alias la='exa -la'
-  alias l='exa -lG'
-  alias ll='exa -laG'
+# eza
+if type eza > /dev/null 2>&1; then 
+  alias ls='eza'
+  alias la='eza -la'
+  alias l='eza -lG'
+  alias ll='eza -laG'
 fi
 
-# zoxide & auto exa alias
-if type z > /dev/null 2>&1 && type exa > /dev/null 2>&1; then 
-  j(){z $@ && exa --icons}
-  ji(){zi $@ && exa --icons}
+# zoxide & auto eza alias
+if type z > /dev/null 2>&1 && type eza > /dev/null 2>&1; then 
+  j(){z $@ && eza --icons}
+  ji(){zi $@ && eza --icons}
 fi
 
 disable r
