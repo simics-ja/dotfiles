@@ -9,6 +9,7 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.go/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH="/opt/homebrew/opt/bison/bin:$PATH"
+export PATH="/opt/homebrew/opt/m4/bin:$PATH"
 
 # GOPATH
 export GOPATH=$HOME/.go
