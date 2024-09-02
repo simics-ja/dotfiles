@@ -18,6 +18,11 @@ export GOPATH=$HOME/.go
 # Initialization
 #
 
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
+# Comment out the following line if you want to install old versions of software
+# export HOMEBREW_NO_INSTALL_FROM_API=1
+
 # mise
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
