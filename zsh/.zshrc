@@ -24,7 +24,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # export HOMEBREW_NO_INSTALL_FROM_API=1
 
 # mise
-eval "$(/opt/homebrew/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 # sheldon
 eval "$(sheldon source)"
