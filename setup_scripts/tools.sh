@@ -28,4 +28,9 @@ if [ $OSTYPE==darwin* ]; then
 
    # hammerspoon
    ln -sfn $HOME/dotfiles/hammerspoon $HOME/.hammerspoon
+
+   # docker compose
+   if command -v colima &> /dev/null; then
+      ln -sfn $HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose $HOME/.docker/cli-plugins/docker-compose
+   fi
 fi
