@@ -82,3 +82,6 @@ if type z > /dev/null 2>&1 && type eza > /dev/null 2>&1; then
 fi
 
 disable r
+
+alias npx='echo "WARNING: npx is not allowed" && false'
+alias npm='echo "WARNING: npm is not allowed" && false'
