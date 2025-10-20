@@ -13,6 +13,15 @@ export PATH="/opt/homebrew/opt/m4/bin:$PATH"
 # GOPATH
 export GOPATH=$HOME/.go
 
+# pnpm
+if [[ $OSTYPE==darwin* ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+  case ":$PATH:" in
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
+  esac
+fi
+
 #
 # Initialization
 #
