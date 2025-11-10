@@ -1,0 +1,62 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bssh(git fetch:*)",
+      "Bssh(git switch:*)",
+      "Bash(pnpm install:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(sort:*)",
+      "Bash(uniq:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Bash(git merge:*)",
+      "Bash(git revert:*)",
+      "Bash(git cherry-pick:*)",
+      "Read(/etc/passwd)",
+      "Read(~/ssh/**)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(.env*)",
+      "Read(id_rsa*)",
+      "Read(id_ed25519)",
+      "Read(*.key)",
+      "Read(*.pem)",
+      "Write(.env*)",
+      "Write(id_rsa*)",
+      "Write(id_ed25519)",
+      "Write(*.key)",
+      "Write(*.pem)",
+      "Bash(npm install:*)",
+      "Bash(npx:*)"
+    ],
+    "ask": [
+    "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(git add:*)",
+      "Bash(git branch:*)",
+      "Bash(git stash:*)",
+      "Bash(git pull:*)",
+      "Bash(mv:*)",
+      "Bash(cp:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": false
+}
