@@ -41,3 +41,6 @@ hs.hotkey.bind({"ctrl", "shift"}, "V", nil, function()
     hs.pasteboard.writeObjects(hs.styledtext.new(lineBreakRemovedText))
     hs.eventtap.keyStroke({"cmd"}, "V")
 end)
+
+-- Kindle screenshot tool
+require("kindle")
