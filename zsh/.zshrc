@@ -28,6 +28,8 @@ fi
 
 # homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+export HOMEBREW_BUNDLE_DUMP_NO_GO=1
 # Comment out the following line if you want to install old versions of software
 # export HOMEBREW_NO_INSTALL_FROM_API=1
 
