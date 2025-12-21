@@ -22,15 +22,17 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sf $HOME/dotfiles/vim/init.vim $HOME/.vimrc
 
-if [ $OSTYPE==darwin* ]; then
-   # lepton
-   ln -sf $HOME/dotfiles/lepton/.leptonrc $HOME/.leptonrc
+case "$OSTYPE" in
+   darwin*)
+      # lepton
+      ln -sf "$HOME/dotfiles/lepton/.leptonrc" "$HOME/.leptonrc"
 
-   # hammerspoon
-   ln -sfn $HOME/dotfiles/hammerspoon $HOME/.hammerspoon
+      # hammerspoon
+      ln -sfn "$HOME/dotfiles/hammerspoon" "$HOME/.hammerspoon"
 
-   # docker compose
-   if command -v colima &> /dev/null; then
-      ln -sfn $HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose $HOME/.docker/cli-plugins/docker-compose
-   fi
-fi
+      # docker compose
+      if command -v colima > /dev/null 2>&1; then
+         ln -sfn "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" "$HOME/.docker/cli-plugins/docker-compose"
+      fi
+      ;;
+esac
