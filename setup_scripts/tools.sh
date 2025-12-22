@@ -24,9 +24,6 @@ ln -sf $HOME/dotfiles/vim/init.vim $HOME/.vimrc
 
 case "$OSTYPE" in
    darwin*)
-      # lepton
-      ln -sf "$HOME/dotfiles/lepton/.leptonrc" "$HOME/.leptonrc"
-
       # hammerspoon
       ln -sfn "$HOME/dotfiles/hammerspoon" "$HOME/.hammerspoon"
 

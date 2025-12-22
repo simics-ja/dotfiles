@@ -7,8 +7,6 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.go/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
-export PATH="/opt/homebrew/opt/bison/bin:$PATH"
-export PATH="/opt/homebrew/opt/m4/bin:$PATH"
 
 # GOPATH
 export GOPATH=$HOME/.go
@@ -27,11 +25,13 @@ fi
 #
 
 # homebrew
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
-export HOMEBREW_BUNDLE_DUMP_NO_GO=1
-# Comment out the following line if you want to install old versions of software
-# export HOMEBREW_NO_INSTALL_FROM_API=1
+if (( $+commands[brew] )); then
+  export HOMEBREW_NO_AUTO_UPDATE=1
+  export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+  export HOMEBREW_BUNDLE_DUMP_NO_GO=1
+  # Comment out the following line if you want to install old versions of software
+  # export HOMEBREW_NO_INSTALL_FROM_API=1
+fi
 
 # mise
 eval "$(mise activate zsh)"
@@ -94,5 +94,12 @@ fi
 
 disable r
 
+# Security: Disallow npm and npx by default
 alias npx='echo "WARNING: npx is not allowed" && false'
 alias npm='echo "WARNING: npm is not allowed" && false'
+
+# Temporarily allow npm and npx (use 'allow-npm' to enable)
+allow-npm() {
+  unalias npm npx 2>/dev/null
+  echo "npm and npx are now allowed in this session."
+}
