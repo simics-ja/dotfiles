@@ -1,4 +1,7 @@
 #!/bin/sh
+echo "--- tools.sh ---"
+
+OS=$(uname -s)
 
 # mkdir
 mkdir -p $HOME/.config
@@ -22,8 +25,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -sf $HOME/dotfiles/vim/init.vim $HOME/.vimrc
 
-case "$OSTYPE" in
-   darwin*)
+case "$OS" in
+   Darwin)
       # hammerspoon
       ln -sfn "$HOME/dotfiles/hammerspoon" "$HOME/.hammerspoon"
 
