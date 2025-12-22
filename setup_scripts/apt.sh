@@ -21,3 +21,5 @@ fi
 if [ -z "$(command -v direnv)" ]; then
   sudo apt install -y direnv
 fi
+
+xargs -a $HOME/dotfiles/apt_packages.txt sudo apt install -y

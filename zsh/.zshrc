@@ -7,6 +7,7 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.go/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.local/bin
 
 # GOPATH
 export GOPATH=$HOME/.go
@@ -23,6 +24,16 @@ fi
 #
 # Initialization
 #
+
+# local settings for individual machine
+# need to make .zshrc.local (ignored by git)
+test -e $HOME/dotfiles/zsh/.zshrc.local && source $HOME/dotfiles/zsh/.zshrc.local
+
+# homebrew on linux
+if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
+  export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"  
+fi
 
 # homebrew
 if (( $+commands[brew] )); then
@@ -45,10 +56,6 @@ eval "$(starship init zsh)"
 # direnv
 export EDITOR=vim
 eval "$(direnv hook zsh)"
-
-# local settings for individual machine
-# need to make .zshrc.local (ignored by git)
-test -e $HOME/dotfiles/zsh/.zshrc.local && source $HOME/dotfiles/zsh/.zshrc.local
 
 #
 # Customization
