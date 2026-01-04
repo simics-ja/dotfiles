@@ -110,3 +110,8 @@ allow-npm() {
   unalias npm npx 2>/dev/null
   echo "npm and npx are now allowed in this session."
 }
+
+# antigravity
+if type z > /dev/null 2>&1; then
+  alias ag='antigravity'
+fi
