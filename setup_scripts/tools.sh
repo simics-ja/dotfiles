@@ -19,6 +19,32 @@ ln -sf $HOME/dotfiles/git $HOME/.config/
 # starship
 ln -sf $HOME/dotfiles/starship/starship.toml $HOME/.config/starship.toml
 
+# mise
+BREW_PREFIX=$(brew --prefix)
+MISE_CONFIG="$HOME/.config/mise/config.toml"
+
+if [ -d "$BREW_PREFIX" ]; then
+    LIBZIP="$BREW_PREFIX/opt/libzip"
+    OPENSSL="$BREW_PREFIX/opt/openssl"
+    
+    PHP_OPTS="--with-libzip=$LIBZIP --with-openssl=$OPENSSL"
+    LDFLAGS="-L$LIBZIP/lib -L$OPENSSL/lib"
+    CPPFLAGS="-I$LIBZIP/include -I$OPENSSL/include"
+
+    mkdir -p "$(dirname "$MISE_CONFIG")"
+    [ ! -f "$MISE_CONFIG" ] && touch "$MISE_CONFIG"
+
+    if command -v mise > /dev/null 2>&1; then
+        if ! grep -q "PHP_CONFIGURE_OPTIONS" "$MISE_CONFIG" 2>/dev/null; then
+            echo "Injecting PHP build settings into mise config..."
+            mise set --global PHP_CONFIGURE_OPTIONS="$PHP_OPTS"
+            mise set --global LDFLAGS="$LDFLAGS"
+            mise set --global CPPFLAGS="$CPPFLAGS"
+            echo "mise environment variables for PHP have been set."
+        fi
+    fi
+fi
+
 # vim
 ## Install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
