@@ -2,11 +2,13 @@
   editor = vim
   autocrlf = false
   longpaths = true
-	sshCommand = ssh.exe
 
 [user]
   email = smz2develop@gmail.com
   name = Tomoyuki Shimizu
+
+[include]
+  path = ~/.config/git/local
 
 [IncludeIf "gitdir:~/work/cybozu/"]
   path = ~/.config/git/cybozu
