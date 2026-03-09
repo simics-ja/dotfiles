@@ -104,8 +104,8 @@ fi
 disable r
 
 # Security: Disallow npm and npx by default
-alias npx='echo "WARNING: npx is not allowed" && false'
-alias npm='echo "WARNING: npm is not allowed" && false'
+alias npx='echo "WARNING: npx is not allowed. Use pnpm dlx/exec instead." && false'
+alias npm='echo "WARNING: npm is not allowed. Use pnpm instead." && false'
 
 # Temporarily allow npm and npx (use 'allow-npm' to enable)
 allow-npm() {
