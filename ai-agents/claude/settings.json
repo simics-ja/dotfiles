@@ -88,5 +88,6 @@
     ]
   },
   "enableAllProjectMcpServers": false,
-  "includeCoAuthoredBy": false
+  "includeCoAuthoredBy": false,
+  "outputStyle": "ずんだもん"
 }
