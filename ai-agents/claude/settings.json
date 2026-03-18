@@ -16,7 +16,8 @@
       "Bash(uniq:*)",
       "Bash(wc:*)",
       "Bash(head:*)",
-      "Bash(tail:*)"
+      "Bash(tail:*)",
+      "Bash(codex:*)"
     ],
     "deny": [
       "Bash(sudo:*)",
