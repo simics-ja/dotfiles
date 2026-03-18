@@ -9,7 +9,6 @@ export PATH="$PATH:$HOME/.go/bin"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:/opt/homebrew/opt/bison/bin"
 export PATH="$PATH:/opt/homebrew/opt/m4/bin"
-export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
 
 # GOPATH
 export GOPATH=$HOME/.go
@@ -112,8 +111,3 @@ allow-npm() {
   unalias npm npx 2>/dev/null
   echo "npm and npx are now allowed in this session."
 }
-
-# antigravity
-if type z > /dev/null 2>&1; then
-  alias ag='antigravity'
-fi
