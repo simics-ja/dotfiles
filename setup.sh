@@ -33,3 +33,4 @@ case "$OS" in
 esac
 
 . $HOME/dotfiles/setup_scripts/tools.sh
+. $HOME/dotfiles/setup_scripts/ai-agent.sh

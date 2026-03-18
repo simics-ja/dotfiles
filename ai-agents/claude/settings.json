@@ -6,7 +6,7 @@
       "Bash(git log:*)",
       "Bssh(git fetch:*)",
       "Bssh(git switch:*)",
-      "Bash(pnpm install:*)",
+      "Bash(pnpm:*)",
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(tree:*)",
@@ -42,7 +42,7 @@
       "Write(id_ed25519)",
       "Write(*.key)",
       "Write(*.pem)",
-      "Bash(npm install:*)",
+      "Bash(npm:*)",
       "Bash(npx:*)"
     ],
     "ask": [
