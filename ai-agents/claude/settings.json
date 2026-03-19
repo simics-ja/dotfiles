@@ -18,7 +18,17 @@
       "Bash(sort:*)",
       "Bash(uniq:*)",
       "Bash(wc:*)",
-      "Bash(codex exec:*)"
+      "Bash(codex exec:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh pr checks:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh release list:*)"
     ],
     "deny": [
       "Bash(sudo:*)",
