@@ -99,5 +99,9 @@
   },
   "enableAllProjectMcpServers": false,
   "includeCoAuthoredBy": false,
-  "outputStyle": "ずんだもん"
+  "outputStyle": "ずんだもん",
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline.sh"
+  }
 }
