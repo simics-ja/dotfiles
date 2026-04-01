@@ -1,4 +1,5 @@
 {
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "WebSearch",
@@ -98,10 +99,9 @@
     ]
   },
   "enableAllProjectMcpServers": false,
-  "includeCoAuthoredBy": false,
-  "outputStyle": "ずんだもん",
   "statusLine": {
     "type": "command",
     "command": "sh ~/.claude/statusline.sh"
-  }
+  },
+  "outputStyle": "ずんだもん"
 }
