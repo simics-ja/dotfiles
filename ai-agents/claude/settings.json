@@ -103,5 +103,27 @@
     "type": "command",
     "command": "sh ~/.claude/statusline.sh"
   },
-  "outputStyle": "ずんだもん"
+  "outputStyle": "ずんだもん",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/dotfiles/assets/audio/Retro_Anime-Gun.mp3"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay ~/dotfiles/assets/audio/Flexatone03.mp3"
+          }
+        ]
+      }
+    ]
+  }
 }

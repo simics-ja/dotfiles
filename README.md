@@ -18,3 +18,9 @@ sh setup.sh
 cp git/config/local.wsl.sample git/config/local
 cp zsh/.zshrc.local.wsl.sample zsh/.zshrc.local
 ```
+
+## Third-party Licenses
+
+Audio assets: OtoLogic (https://otologic.jp) — CC BY 4.0
+
+See [NOTICE](NOTICE) for details.
