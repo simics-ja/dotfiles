@@ -25,6 +25,7 @@ set nospell                     " spell check
 set whichwrap=b,s,h,l,<,>,[,],~ " horizontal cursor movement over line
 set scrolloff=3                 " scroll margin
 set backspace=indent,eol,start  " always enable backspace
+set nomodeline                  " disable modeline to prevent security vulnerabilities
 set colorcolumn=80              " color column line
 
 " == String search ==
