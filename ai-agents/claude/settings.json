@@ -1,6 +1,5 @@
 {
   "includeCoAuthoredBy": false,
-  "autoUpdatesChannel": "stable",
   "permissions": {
     "allow": [
       "WebSearch",
@@ -100,11 +99,6 @@
     ]
   },
   "enableAllProjectMcpServers": false,
-  "statusLine": {
-    "type": "command",
-    "command": "sh ~/.claude/statusline.sh"
-  },
-  "outputStyle": "ずんだもん",
   "hooks": {
     "Notification": [
       {
@@ -117,5 +111,22 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline.sh"
+  },
+  "extraKnownMarketplaces": {
+    "phpstorm-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "jetbrains/phpstorm-claude-marketplace"
+      }
+    }
+  },
+  "outputStyle": "ずんだもん",
+  "autoUpdatesChannel": "stable",
+  "enabledPlugins": {
+    "phpstorm-plugin@phpstorm-marketplace": true
   }
 }
