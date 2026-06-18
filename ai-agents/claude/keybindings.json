@@ -4,10 +4,7 @@
   "bindings": [
     {
       "context": "Chat",
-      "bindings": {
-        "ctrl+enter": "chat:submit",
-        "enter": "chat:newline"
-      }
+      "bindings": {}
     }
   ]
 }
