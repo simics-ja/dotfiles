@@ -125,8 +125,5 @@
     }
   },
   "outputStyle": "ずんだもん",
-  "autoUpdatesChannel": "stable",
-  "enabledPlugins": {
-    "phpstorm-plugin@phpstorm-marketplace": true
-  }
+  "autoUpdatesChannel": "stable"
 }
