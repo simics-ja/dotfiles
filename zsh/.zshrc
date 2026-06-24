@@ -31,9 +31,8 @@ fi
 test -e $HOME/dotfiles/zsh/.zshrc.local && source $HOME/dotfiles/zsh/.zshrc.local
 
 # homebrew on linux
-if [ -f /home/linuxbrew/.linuxbrew/bin/brew ]; then
-  export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"  
+if [ -f "$HOME/.linuxbrew/bin/brew" ]; then
+  eval "$("$HOME"/.linuxbrew/bin/brew shellenv)"
 fi
 
 # homebrew

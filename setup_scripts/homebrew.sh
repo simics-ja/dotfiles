@@ -5,14 +5,20 @@ OS=$(uname -s)
 
 if [ -z "$(command -v brew)" ]; then
   echo "--- install homebrew ---"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  case "$OS" in
+    Linux)
+      HOMEBREW_PREFIX="$HOME/.linuxbrew" /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      ;;
+    *)
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      ;;
+  esac
 fi
 
 case "$OS" in
   Linux)
     echo "--- install for linux ---"
     test -d "$HOME/.linuxbrew" && eval "$("$HOME"/.linuxbrew/bin/brew shellenv)"
-    test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     brew bundle --file "$HOME/dotfiles/Brewfile.filtered"
     ;;
   Darwin)
