@@ -98,6 +98,7 @@
       "Bash(go get:*)"
     ]
   },
+  "model": "opus[1m]",
   "enableAllProjectMcpServers": false,
   "hooks": {
     "Notification": [
@@ -122,8 +123,17 @@
         "source": "github",
         "repo": "jetbrains/phpstorm-claude-marketplace"
       }
+    },
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
     }
   },
   "outputStyle": "ずんだもん",
-  "autoUpdatesChannel": "stable"
+  "autoUpdatesChannel": "stable",
+  "enabledPlugins": {
+    "codex@openai-codex": true
+  }
 }
