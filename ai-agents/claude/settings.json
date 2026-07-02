@@ -3,9 +3,12 @@
   "permissions": {
     "allow": [
       "WebSearch",
+      "WebFetch",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
       "Bash(pnpm test:*)",
       "Bash(pnpm build:*)",
       "Bash(pnpm lint:*)",
@@ -19,7 +22,6 @@
       "Bash(sort:*)",
       "Bash(uniq:*)",
       "Bash(wc:*)",
-      "Bash(codex exec:*)",
       "Bash(gh pr view:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr diff:*)",
@@ -36,17 +38,10 @@
       "Bash(rm:*)",
       "Bash(curl:*)",
       "Bash(wget:*)",
-      "Bash(yarn:*)",
-      "Bash(bun:*)",
-      "Bash(npm:*)",
+      "Bash(yarn dlx:*)",
+      "Bash(bunx:*)",
       "Bash(npx:*)",
       "Bash(pnpm dlx:*)",
-      "Bash(git push:*)",
-      "Bash(git reset:*)",
-      "Bash(git rebase:*)",
-      "Bash(git merge:*)",
-      "Bash(git revert:*)",
-      "Bash(git cherry-pick:*)",
       "Read(/etc/passwd)",
       "Read(~/.ssh/**)",
       "Read(~/.gnupg/**)",
@@ -72,14 +67,17 @@
       "Write(*.pem)"
     ],
     "ask": [
-      "WebFetch",
-      "Bash(git fetch:*)",
-      "Bash(git pull:*)",
       "Bash(git checkout:*)",
       "Bash(git switch:*)",
       "Bash(git commit:*)",
       "Bash(git add:*)",
       "Bash(git mv:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Bash(git merge:*)",
+      "Bash(git revert:*)",
+      "Bash(git cherry-pick:*)",
       "Bash(git branch:*)",
       "Bash(git stash:*)",
       "Bash(git restore:*)",
@@ -117,6 +115,9 @@
     "type": "command",
     "command": "sh ~/.claude/statusline.sh"
   },
+  "enabledPlugins": {
+    "codex@openai-codex": true
+  },
   "extraKnownMarketplaces": {
     "phpstorm-marketplace": {
       "source": {
@@ -132,8 +133,5 @@
     }
   },
   "outputStyle": "ずんだもん",
-  "autoUpdatesChannel": "stable",
-  "enabledPlugins": {
-    "codex@openai-codex": true
-  }
+  "autoUpdatesChannel": "stable"
 }
