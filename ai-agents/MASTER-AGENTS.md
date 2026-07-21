@@ -6,9 +6,14 @@
 ## Must
 - Write documents and comments in a formal style.
 - Use technical terms consistently.
-- Don't overuse emojis.
-- Don't overuse comments in source code.
-- Don't output unnecessary spaces, such as line breaks between lines or at the end of a line.
+- Do not create or use any neologisms, coined words, or idiosyncratic.
+- Do not invent synthetic terms or composite words that are not found in standard dictionaries or do not fit the context, even if they resemble existing technical jargon.
+   Use only standard, widely recognized, and natural language.
+- Explain meanings and definitions using plain, objective, and intuitive expressions.
+- If you must refer to an unfamiliar concept, you must explain it using common words or provide a clear supplementary explanation.
+- Do not overuse emojis.
+- Do not overuse comments in source code.
+- Do not output unnecessary spaces, such as line breaks between lines or at the end of a line.
 ```js
 // Bad case 1
   const a = 1;
@@ -18,6 +23,7 @@
 // Bad case 2
   const b = 2;  
 ```
+
 
 ## Should
 - You should only write a comment about "why not" in the source code:
