@@ -4,3 +4,5 @@
 **/.claude/settings.local.json
 ai-memory-local/
 ai-workspace-local/
+
+**/.claude/.cc-writes/
