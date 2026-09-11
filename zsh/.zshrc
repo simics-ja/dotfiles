@@ -93,6 +93,11 @@ if type eza > /dev/null 2>&1; then
   alias ll='eza -laG'
 fi
 
+# markdownlint-cli
+if type markdownlint-cli2 > /dev/null 2>&1; then
+  alias mdl='markdownlint-cli2'
+fi
+
 # zoxide & auto eza alias
 if type z > /dev/null 2>&1 && type eza > /dev/null 2>&1; then 
   j(){z $@ && eza --icons}
