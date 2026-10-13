@@ -4,3 +4,4 @@ Brewfile.lock.json
 
 # Claude
 ai-agents/claude/skills/synced
+ai-agents/claude/skills/.trash/
