@@ -8,6 +8,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.go/bin"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/dotfiles/bin"
 
 # GOPATH
 export GOPATH=$HOME/.go

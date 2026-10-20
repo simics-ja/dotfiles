@@ -38,6 +38,7 @@ This repo manages macOS/Linux dotfiles via symlinks. `setup_scripts/tools.sh` is
 | `starship/` | Starship prompt | `~/.config/starship.toml` |
 | `vim/` | Vim/Neovim | `~/.config/nvim/` |
 | `hammerspoon/` | Hammerspoon (macOS only) | `~/.hammerspoon/` |
+| `bin/` | Command-line helpers (`md2clip`) | Added to `PATH` in `zsh/.zshrc` (no symlink) |
 | `ai-agents/` | Claude Code / Codex | `~/.claude/` |
 
 ### AI agent setup

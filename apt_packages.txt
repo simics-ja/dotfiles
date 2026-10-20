@@ -24,10 +24,13 @@ login
 mise
 ncurses-base
 ncurses-bin
+pandoc
 procps
 ripgrep
 ubuntu-minimal
 ubuntu-wsl
 util-linux
+wl-clipboard
+xclip
 zoxide
 zsh

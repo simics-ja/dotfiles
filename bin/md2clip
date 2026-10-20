@@ -1,0 +1,90 @@
+#!/bin/sh
+# md2clip - Convert Markdown to HTML and place it on the clipboard as rich text.
+#
+# Usage:
+#   md2clip [FILE]            Read Markdown from FILE (or stdin) and copy it as HTML.
+#   md2clip --stdout [FILE]   Print the HTML instead of copying it.
+#
+# Requires pandoc and one clipboard backend:
+#   macOS    osascript (built in)
+#   WSL      powershell.exe (Windows PowerShell 5.1, for Set-Clipboard -AsHtml)
+#   Wayland  wl-copy (wl-clipboard package)
+#   X11      xclip
+# Without a backend, the HTML is saved to a file and its path is printed.
+set -eu
+
+usage() {
+  sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'
+}
+
+mode=copy
+input=
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --stdout) mode=stdout ;;
+    -h|--help) usage; exit 0 ;;
+    -*) echo "md2clip: unknown option: $1" >&2; usage >&2; exit 2 ;;
+    *) input=$1 ;;
+  esac
+  shift
+done
+
+if ! command -v pandoc >/dev/null 2>&1; then
+  echo "md2clip: pandoc is not installed" >&2
+  exit 1
+fi
+
+tmpdir=$(mktemp -d "${TMPDIR:-/tmp}/md2clip.XXXXXX")
+trap 'rm -rf "$tmpdir"' EXIT
+body="$tmpdir/body.html"
+html="$tmpdir/clip.html"
+
+pandoc -f gfm -t html --wrap=none ${input:+"$input"} > "$body"
+
+# Inline styles survive the paste; stylesheets do not.
+{
+  printf '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>\n'
+  sed -e 's|<table>|<table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;">|g' \
+      -e 's|<th>|<th style="background:#f0f0f0;">|g' "$body"
+  printf '</body></html>\n'
+} > "$html"
+
+if [ "$mode" = stdout ]; then
+  cat "$html"
+  exit 0
+fi
+
+copied=0
+case "$(uname -s)" in
+  Darwin)
+    # The script goes through a file because the hex payload can exceed the argument length limit.
+    hex=$(od -An -v -tx1 "$html" | tr -d ' \n')
+    printf 'set the clipboard to \302\253data HTML%s\302\273\n' "$hex" > "$tmpdir/copy.applescript"
+    osascript "$tmpdir/copy.applescript" >/dev/null
+    copied=1
+    ;;
+  Linux)
+    if grep -qi microsoft /proc/version 2>/dev/null && command -v powershell.exe >/dev/null 2>&1; then
+      winpath=$(wslpath -w "$html")
+      powershell.exe -NoProfile -NonInteractive -Command \
+        "Set-Clipboard -AsHtml -Value (Get-Content -Raw -Encoding UTF8 -LiteralPath '$winpath')"
+      copied=1
+    elif [ -n "${WAYLAND_DISPLAY:-}" ] && command -v wl-copy >/dev/null 2>&1; then
+      wl-copy --type text/html < "$html"
+      copied=1
+    elif [ -n "${DISPLAY:-}" ] && command -v xclip >/dev/null 2>&1; then
+      xclip -selection clipboard -t text/html -i "$html"
+      copied=1
+    fi
+    ;;
+esac
+
+if [ "$copied" -eq 1 ]; then
+  echo "md2clip: copied as HTML"
+  exit 0
+fi
+
+saved="${TMPDIR:-/tmp}/md2clip.html"
+cp "$html" "$saved"
+echo "md2clip: no clipboard backend available; HTML saved to $saved" >&2
+exit 1

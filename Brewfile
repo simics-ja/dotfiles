@@ -120,6 +120,8 @@ brew "openjpeg"
 brew "leptonica"
 # Framework for layout and rendering of i18n text
 brew "pango"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # OCR (Optical Character Recognition) engine
 brew "tesseract"
 # Interpreter for PostScript and PDF
