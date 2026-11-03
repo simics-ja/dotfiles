@@ -1,7 +1,7 @@
 tap "mutagen-io/mutagen", trusted: { formulae: ["mutagen"] }
 tap "rvben/rumdl"
-# Run your GitHub Actions locally
-brew "act"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c@78"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
 # Spell checker with better logic than ispell
@@ -10,14 +10,14 @@ brew "aspell"
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # NaCl networking and cryptography library
 brew "libsodium"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # GNU internationalization (i18n) and localization (l10n) library
@@ -108,8 +108,6 @@ brew "webp"
 brew "gd"
 # GitHub command-line tool
 brew "gh"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@78"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Color management engine supporting ICC profiles
@@ -120,8 +118,6 @@ brew "openjpeg"
 brew "leptonica"
 # Framework for layout and rendering of i18n text
 brew "pango"
-# Swiss-army knife of markup format conversion
-brew "pandoc"
 # OCR (Optical Character Recognition) engine
 brew "tesseract"
 # Interpreter for PostScript and PDF
@@ -202,6 +198,8 @@ brew "nghttp2"
 brew "nkf"
 # Package for scientific computing with Python
 brew "numpy"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
 # Highly capable, feature-rich programming language
 brew "perl"
 # Interpreted, interactive, object-oriented programming language
@@ -270,8 +268,6 @@ cask "1password-cli"
 cask "affinity"
 # Application uninstaller
 cask "appcleaner"
-# Multi-track audio editor and recorder
-cask "audacity"
 # Menu bar icon organiser
 cask "bartender"
 # Tool to customise input devices and automate computer systems
@@ -282,8 +278,6 @@ cask "chromium"
 cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
-# Clipboard extension app
-cask "clipy"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 # OpenAI's Codex desktop app for managing coding agents
@@ -309,22 +303,14 @@ cask "iterm2"
 cask "karabiner-elements"
 # Trims video and audio files losslessly
 cask "losslesscut"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
-# Multi-platform web browser
-cask "microsoft-edge"
 # App to write, plan, collaborate, and get organised
 cask "notion"
-# Open-source software for live streaming and screen recording
-cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Collaboration platform for API development
 cask "postman"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
-# Virtual machines UI using QEMU
-cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Open-source version of the X.Org X Window System
