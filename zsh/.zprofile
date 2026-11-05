@@ -1,5 +1,9 @@
 if [[ $OSTYPE==linux* ]]; then
-  test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+  if [[ -x "$HOME/.linuxbrew/bin/brew" ]]; then
+    eval "$("$HOME/.linuxbrew/bin/brew" shellenv)"
+  elif [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  fi
 fi
 
 if [[ $OSTYPE==darwin* ]]; then
