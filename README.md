@@ -12,12 +12,13 @@ sh setup.sh
 
 ### local config
 
-**WSL example:**
+**WSL:**
 
 ```bash
-cp git/config/local.wsl.sample git/config/local
-cp zsh/.zshrc.local.wsl.sample zsh/.zshrc.local
+sh setup_scripts/wsl.sh
 ```
+
+The script copies the WSL samples to `git/local` and `zsh/.zshrc.local` without overwriting existing local settings.
 
 ## Third-party Licenses
 
