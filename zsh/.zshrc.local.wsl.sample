@@ -1,3 +1,6 @@
 if grep -qi microsoft /proc/version 2>/dev/null; then
     export GIT_SSH_COMMAND="ssh.exe"
 fi
+
+alias ssh='ssh.exe'
+alias ssh-add='ssh-add.exe'
