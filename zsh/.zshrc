@@ -68,6 +68,7 @@ if test -n "$(git -C $HOME/dotfiles status --porcelain)" ||
 fi
 
 # zsh history optimizer
+setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
