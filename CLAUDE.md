@@ -43,7 +43,9 @@ This repo manages macOS/Linux dotfiles via symlinks. `setup_scripts/tools.sh` is
 
 ### AI agent setup
 
-`ai-agents/MASTER-AGENTS.md` is the source of truth for Claude instructions, symlinked to `~/.claude/CLAUDE.md`. Editing this file affects all future Claude Code sessions. `ai-agents/claude/settings.json` controls tool permissions (allowed/denied/ask).
+`ai-agents/MASTER-AGENTS.md` is the source of truth for Claude instructions, symlinked to `~/.claude/CLAUDE.md`. Editing this file affects all future Claude Code sessions. `ai-agents/claude/settings.json` controls tool permissions (allowed/denied/ask). `ai-agents/claude/agents/` holds the subagent definitions and `ai-agents/claude/skills/` holds the skills; both are symlinked into `~/.claude/` as directories.
+
+This repository is public. `.gitignore` ignores every entry under `ai-agents/claude/skills/` and `ai-agents/claude/agents/` except the ones it lists, so a new skill or agent stays private by default. Before adding one to that list, confirm that it contains no absolute paths, internal names or personal information, and that it does not depend on a specific project, language, framework or uncommon domain knowledge. A skill or agent that depends on one project belongs in that project's `.claude/` directory instead.
 
 ### Cross-platform notes
 

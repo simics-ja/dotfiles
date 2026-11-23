@@ -43,3 +43,11 @@
           // Save process
         }
       ```
+
+# Skill and Agent Authoring Rules
+- Place a skill or agent that depends on one project in that project's configuration directory (such as `.claude/`), not in the user-level directory (such as `~/.claude/`).
+- Place a skill or agent in the user-level directory only when it is useful across projects.
+  - Do not write absolute paths, internal names, or personal information in it.
+  - Do not fix commands, directory names, languages, or frameworks in it. Refer to the project's instructions for them.
+  - Keep the procedure, the output format, and the decision criteria specific.
+- The user-level skills and agents are stored in a public repository that ignores new entries by default. Do not add an entry to the list of published ones in its `.gitignore` unless instructed.

@@ -3,5 +3,8 @@ Brewfile.lock.json
 /git/local
 
 # Claude
-ai-agents/claude/skills/synced
-ai-agents/claude/skills/.trash/
+# This repository is public, so skills and agents are private unless listed here.
+ai-agents/claude/skills/*
+ai-agents/claude/agents/*
+!ai-agents/claude/skills/coach-me/
+!ai-agents/claude/skills/rich-copy/
